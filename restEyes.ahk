@@ -1,9 +1,8 @@
 ﻿#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn  ; Enable warnings to assist with detecting common errors.
+#SingleInstance force
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-#SingleInstance force
 
 Menu, Tray, Icon, imgs\icon.jpg
 
@@ -23,12 +22,11 @@ Return
 
 Click:
 	toggle := !toggle
-	if(!toggle) {
-		SetTimer, RestTwentySec, Off
-	} else {
+	if(toggle) {
 		SetTimer, RestTwentySec, 1200000
+	} else {
+		SetTimer, RestTwentySec, Off
 	}
-	
 	GuiControl Hide, c%ci%
 	ci := 3 - ci
 	GuiControl Show, c%ci%
@@ -49,14 +47,12 @@ TicToc:
 	s := Mod(remainingTime, 60)
 	displayedTime := Format2Digits(s)
 	GuiControl, , time, %displayedTime%
-	if displayedTime = 00
-	{
+	if displayedTime = 00 {
 	Gui, time:Hide
 	}
 Return
 
-Format2Digits(_val)
-{
+Format2Digits(_val) {
 	_val += 100
 	StringRight _val, _val, 2
 	Return _val
