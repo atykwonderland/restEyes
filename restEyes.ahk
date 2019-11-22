@@ -53,20 +53,12 @@ TicToc:
 	remainingTime := endTime
 	EnvSub remainingTime, %A_Now%, Seconds
 	s := Mod(remainingTime, 60)
-	displayedTime := Format2Digits(s)
-	GuiControl, , time, %displayedTime%
+	GuiControl, , time, %s%
 	; hide the breaktime GUI when timer is done
-	if displayedTime = 00 {
+	if s = 00 {
 	Gui, time:Hide
 	}
 Return
-
-; Format the time into displayable digits
-Format2Digits(_val) {
-	_val += 100
-	StringRight _val, _val, 2
-	Return _val
-}
 
 ; When window is closed, exit the app
 close:
