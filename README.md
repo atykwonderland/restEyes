@@ -1,7 +1,7 @@
 # restEyes
 
 A very minimal AutoHotKey program to run in the background when looking at a monitor for prolonged periods of time.
-This program follows the doctor recommended 20-20-20 rule when looking at a monitor to optimise eye health while using a computer. 
+This program follows the doctor recommended 20-20-20 rule when looking at a monitor to reduce eye strain.
 
 Turn on and off using the button on the gui once executing the program.
 Exit the program using the window close.
