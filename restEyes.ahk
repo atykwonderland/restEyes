@@ -5,17 +5,17 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 #SingleInstance force
 
-Menu, Tray, Icon, E:\test\imgs\icon.jpg
+Menu, Tray, Icon, imgs\icon.jpg
 
 Gui, main:New
 Gui, main:Font, cFFFFFF s15, Verdana
-Gui, main:Add, Picture, x0 y0 w300 h200, E:\test\imgs\bg.png
-Gui, main:Add, Picture, x90 y75 +BackgroundTrans vC1 gClick, E:\test\imgs\button-off.png
-Gui, main:Add, Picture, x90 y75 +BackgroundTrans vC2 gClick hidden, E:\test\imgs\button-on.png
+Gui, main:Add, Picture, x0 y0 w300 h200, imgs\bg.png
+Gui, main:Add, Picture, x90 y75 +BackgroundTrans vC1 gClick, imgs\button-off.png
+Gui, main:Add, Picture, x90 y75 +BackgroundTrans vC2 gClick hidden, imgs\button-on.png
 Gui, main:Show, w300 h200
 
 Gui, time:New
-Gui, time:Add, Picture, x0 y0 h%A_ScreenHeight% w%A_ScreenWidth%, E:\test\imgs\bg.png
+Gui, time:Add, Picture, x0 y0 h%A_ScreenHeight% w%A_ScreenWidth%, imgs\bg.png
 
 ci := 1
 toggle := false
